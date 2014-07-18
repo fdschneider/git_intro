@@ -1,0 +1,19 @@
+---
+title: "git cheatsheet"
+author: "Florian Schneider"
+date: "Wednesday, July 16, 2014"
+output: html_document
+---
+
+Local Workflow: 
+
+1. editing
+2. staging
+3. commit
+
+
+Remember the basic element of git are commits. They pool several edits together into one object that is identified by a unique hash. 
+
+
+adding
+
