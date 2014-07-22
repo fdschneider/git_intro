@@ -1,0 +1,134 @@
+git version control 
+========================================================
+author: Florian D. Schneider
+date: 27.08.2014
+font-import: http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.cssx
+font-family: 'Open Sans'
+transition: none
+
+
+
+
+Introduction
+========================================================
+type: section
+
+
+You allready use version control!
+========================================================
+incremental: true
+
+```
+- project_directory
+    - project.c            01.08.2014
+    - project_v0.1.c       02.08.2014
+    - project_v0.2.c       03.08.2014
+    - project_v0.21.c      04.08.2014
+    - project_v0.2_sonia.c 04.08.2014
+    - project_v0.4_test.c  05.08.2014
+```
+
+But:
+========================================================
+- annoying: there are so many files! 
+- confusing: which version was newest?
+- unsafe: did you fix that bug in the right file? 
+- requires manual back-ups
+
+instead: use a VCS
+========================================================
+- code_directory
+    - .git              *01.08.2014*
+    - current_project.c  *01.08.2014*
+
+instead: use a VCS
+========================================================
+- code_directory
+    - .git              *02.08.2014*
+    - current_project.c  *02.08.2014*
+
+instead: use a VCS
+========================================================
+- code_directory
+    - .git              *03.08.2014*
+    - current_project.c  *03.08.2014*
+
+
+why version control?
+========================================================
+incremental: true
+
+- tractability of work 
+- documentation
+- progressive development
+- clean working directory
+
+why version control?
+========================================================
+incremental: true
+
+- robust, structured backups
+- collaborative work
+- publishing
+
+
+git
+========================================================
+- a version control system
+- robust against errors
+
+
+
+Workflow
+========================================================
+type: section
+
+
+Everyday git
+========================================================
+
+1. work on files
+2. commit to repository
+    - adding files
+    - commit + message
+    
+Advanced:
+- tagging
+- branching
+
+Once in a while git
+========================================================
+
+
+
+Working with remotes
+========================================================
+- for syncing your computers
+- or collaboration
+
+Working with remotes
+========================================================
+
+![](figures/remotes_Page_1.png)
+
+Working with remotes
+========================================================
+![](figures/remotes_Page_2.png)
+
+Working with remotes
+========================================================
+![](figures/remotes_Page_3.png)
+
+Working with remotes
+========================================================
+![](figures/remotes_Page_4.png)
+
+Working with remotes
+========================================================
+![](figures/remotes_Page_5.png)
+
+
+public vs. private
+========================================================
+
+

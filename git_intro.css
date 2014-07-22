@@ -1,0 +1,29 @@
+.reveal h1 {
+  font-weight: 700;
+  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Big section header */
+
+.section .reveal h2 {
+  font-weight: 700;
+  font-size: 3em;
+  margin-top: 25%;
+  line-height: 0.9em;
+  letter-spacing: -0.02em;
+  text-align: center;
+  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4);
+
+}
+
+.reveal section img {
+   border: none;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.15);
+}
+
+
+.file {}
+
+.file li {
+ list-style: none; 
+}
