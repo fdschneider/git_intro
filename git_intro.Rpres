@@ -2,11 +2,9 @@ git version control
 ========================================================
 author: Florian D. Schneider
 date: 27.08.2014
-font-import: http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.cssx
+font-import: http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic&subset=latin,greek-ext,greek
 font-family: 'Open Sans'
 transition: none
-
-
 
 
 Introduction
@@ -17,16 +15,17 @@ type: section
 You allready use version control!
 ========================================================
 incremental: true
+type: files
 
-```
-- project_directory
-    - project.c            01.08.2014
-    - project_v0.1.c       02.08.2014
-    - project_v0.2.c       03.08.2014
-    - project_v0.21.c      04.08.2014
-    - project_v0.2_sonia.c 04.08.2014
-    - project_v0.4_test.c  05.08.2014
-```
+filename            | last updated               
+------------------- | ----------
+project.c           | 01.08.2014
+project_v0.1.c      | 02.08.2014
+project_v0.2.c      | 03.08.2014
+project_v0.21.c     | 04.08.2014
+project_v0.2_sonia.c| 04.08.2014
+project_v0.4_test.c | 05.08.2014
+
 
 But:
 ========================================================
@@ -37,22 +36,27 @@ But:
 
 instead: use a VCS
 ========================================================
-- code_directory
-    - .git              *01.08.2014*
-    - current_project.c  *01.08.2014*
+
+filename            | last updated               
+------------------- | ----------
+ .git                | 01.08.2014
+project.c           | 01.08.2014
 
 instead: use a VCS
 ========================================================
-- code_directory
-    - .git              *02.08.2014*
-    - current_project.c  *02.08.2014*
+
+filename            | last updated               
+------------------- | ----------
+.git                | 02.08.2014
+project.c           | 02.08.2014
 
 instead: use a VCS
 ========================================================
-- code_directory
-    - .git              *03.08.2014*
-    - current_project.c  *03.08.2014*
 
+filename            | last updated               
+------------------- | ----------
+.git                | 03.08.2014
+project.c           | 03.08.2014
 
 why version control?
 ========================================================
@@ -76,8 +80,11 @@ git
 ========================================================
 - a version control system
 - robust against errors
+- platform independent: command line *or* clients
 
-
+```
+$ git
+```
 
 Workflow
 ========================================================
