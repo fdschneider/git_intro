@@ -12,52 +12,6 @@ Introduction
 type: section
 
 
-You allready use version control!
-========================================================
-incremental: true
-type: files
-
-filename            | last updated               
-------------------- | ----------
-project.c           | 01.08.2014
-project_v0.1.c      | 02.08.2014
-project_v0.2.c      | 03.08.2014
-project_v0.21.c     | 04.08.2014
-project_v0.2_sonia.c| 04.08.2014
-project_v0.4_test.c | 05.08.2014
-
-
-But:
-========================================================
-- annoying: there are so many files! 
-- confusing: which version was newest?
-- unsafe: did you fix that bug in the right file? 
-- requires manual back-ups
-
-instead: use a VCS
-========================================================
-
-filename            | last updated               
-------------------- | ----------
- .git                | 01.08.2014
-project.c           | 01.08.2014
-
-instead: use a VCS
-========================================================
-
-filename            | last updated               
-------------------- | ----------
-.git                | 02.08.2014
-project.c           | 02.08.2014
-
-instead: use a VCS
-========================================================
-
-filename            | last updated               
-------------------- | ----------
-.git                | 03.08.2014
-project.c           | 03.08.2014
-
 why version control?
 ========================================================
 incremental: true
@@ -73,7 +27,55 @@ incremental: true
 
 - robust, structured backups
 - collaborative work
-- publishing
+- easy publication
+
+You allready use version control!
+========================================================
+type: files
+
+filename            | last updated               
+------------------- | ----------
+project.c           | 01.08.2014
+project_v0.1.c      | 02.08.2014
+project_v0.2.c      | 03.08.2014
+project_v0.21.c     | 04.08.2014
+project_v0.2_sonia.c| 04.08.2014
+
+You allready use version control!
+========================================================
+type: files
+
+filename            | last updated               
+------------------- | ----------
+project.c           | 01.08.2014
+project_v0.1.c      | 02.08.2014
+project_v0.2.c      | 03.08.2014
+project_v0.21.c     | 04.08.2014
+project_v0.2_sonia.c| 04.08.2014
+project_v0.21_s.c   | 05.08.2014
+
+You allready use version control!
+========================================================
+type: files
+
+filename            | last updated               
+------------------- | ----------
+project.c           | 01.08.2014
+project_v0.1.c      | 02.08.2014
+project_v0.2.c      | 07.08.2014
+project_v0.21.c     | 04.08.2014
+project_v0.2_sonia.c| 04.08.2014
+project_v0.21_s.c   | 05.08.2014
+
+But:
+========================================================
+incremental: true
+
+- annoying: there are so many files! 
+- confusing: which is the latest version?
+- not progressive: did you fix that bug in the right file? 
+- requires manual back-ups
+
 
 
 git
@@ -86,10 +88,187 @@ git
 $ git
 ```
 
-Workflow
+git
+========================================================
+
+filename            | last updated               
+------------------- | ----------
+.git                | 01.08.2014
+project.c           | 01.08.2014
+
+git
+========================================================
+
+filename            | last updated               
+------------------- | ----------
+.git                | 02.08.2014
+project.c           | 02.08.2014
+
+git
+========================================================
+
+filename            | last updated               
+------------------- | ----------
+.git                | 03.08.2014
+project.c           | 03.08.2014
+
+
+Basics
 ========================================================
 type: section
 
+How does it work?
+========================================================
+
+Terminal:
+
+```
+$ git init
+```
+
+***
+![](figures/git_basics_Page_1.jpg)
+
+How does it work?
+========================================================
+
+Terminal:
+
+```
+$ git status
+# On branch master
+# Changes not staged for commit
+#
+# Untracked files: 
+# 
+#      project.c
+#
+
+```
+
+***
+![](figures/git_basics_Page_2.jpg)
+
+How does it work?
+========================================================
+
+Terminal:
+
+```
+$ git add project.c
+```
+
+***
+![](figures/git_basics_Page_3.jpg)
+
+How does it work?
+========================================================
+
+Terminal:
+
+```
+$ git commit -m "initial project.c"
+```
+
+***
+![](figures/git_basics_Page_4.jpg)
+
+How does it work?
+========================================================
+
+Terminal:
+
+```
+$ git add project.c
+```
+
+***
+![](figures/git_basics_Page_5.jpg)
+
+How does it work?
+========================================================
+
+Terminal:
+
+```
+$ git commit -m "fixed bug project.c"
+```
+
+***
+![](figures/git_basics_Page_6.jpg)
+
+
+How does it work?
+========================================================
+
+Terminal:
+
+```
+$ git add project.c
+```
+
+***
+![](figures/git_basics_Page_7.jpg)
+
+How does it work?
+========================================================
+
+Terminal:
+
+```
+$ git commit -m "fixed bug project.c"
+$ git tag v1.0 -m "first version project.c"
+
+```
+
+***
+![](figures/git_basics_Page_8.jpg)
+
+How does it work?
+========================================================
+
+![](figures/commits_Page_1.png)
+
+How does it work?
+========================================================
+
+![](figures/commits_Page_2.png)
+
+How does it work?
+========================================================
+
+![](figures/commits_Page_3.png)
+
+
+How does it work?
+========================================================
+
+![](figures/commits_Page_5.png)
+
+How does it work?
+========================================================
+
+![](figures/commits_Page_6.png)
+
+How does it work?
+========================================================
+
+![](figures/commits_Page_7.png)
+
+How does it work?
+========================================================
+
+![](figures/commits_Page_8.png)
+
+How does it work?
+========================================================
+
+![](figures/commits_Page_9.png)
+
+
+Workflow
+========================================================
+type: section
 
 Everyday git
 ========================================================
@@ -97,16 +276,49 @@ Everyday git
 1. work on files
 2. commit to repository
     - adding files
+    
+    ```
+    $ git add [file]
+    ```
     - commit + message
     
-Advanced:
-- tagging
-- branching
+    ```
+    $ git commit -m "edit [file]"
+    ```
+
 
 Once in a while git
 ========================================================
 
+3. tagging
 
+  ```
+  $ git tag [v*.*.*] -m "[newest version]"
+  ```
+  
+5. time travelling
+
+  ```
+  $ git checkout v1.0
+  $ git checkout master
+  ```
+
+6. branching
+
+
+graphical Clients
+========================================================
+
+- Windows: [GitHub for Windows](http://windows.github.com/)
+- Mac: [GitHub for Mac](http://mac.github.com/)
+- Linux: [git-cola](http://git-cola.github.com/)
+- all: [GitEye](http://www.giteyeapp.com/), [RStudio](http://www.rstudio.com) and other IDEs have plug-ins
+
+many more: 
+http://git-scm.com/downloads/guis
+
+Backing up & Sync
+========================================================
 
 Working with remotes
 ========================================================
@@ -135,7 +347,83 @@ Working with remotes
 ![](figures/remotes_Page_5.png)
 
 
-public vs. private
+GitHub
 ========================================================
 
+- remote repositories
+- **free** for open source projects (fully public!)
+- private repositories (commercial)
+- manage development (teams, tasks, milestones, wikis)
 
+Alternatives: [Bitbucket](https://bitbucket.org/) (free private for small teams), [GitLab Cloud](https://about.gitlab.com/gitlab-com/)(unlimited free private), and more
+
+Resources
+========================================================
+type: section
+
+Resources
+========================================================
+
+https://www.atlassian.com/git
+
+http://git-scm.com/book/
+
+http://git-scm.com/
+
+https://training.github.com/kit/
+
+Exercises
+========================================================
+type: section
+
+
+1 | working locally
+========================================================
+type: sub-section
+
+1. create a git repository locally
+2. generate content
+3. add and commit
+
+
+2 | tagging
+========================================================
+type: sub-section
+
+in same repository:
+
+1. tag
+2. edit content 
+3. add and commit
+5. check history: `git log` 
+6. checkout tag
+7. return to latest version
+
+3 | GitHub
+========================================================
+type: sub-section
+
+1. create a git repository on Github.
+2. clone to Local PC: <br> `git clone https://github.com`
+3. generate content
+4. add and commit
+5. push
+6. edit online
+7. pull
+
+
+4 | Collaboration
+========================================================
+type: sub-section
+
+1. clone shared project
+3. create a file
+4. add, commit, push
+5. assign a task
+6. check your tasklist
+7. pull repository
+8. fullfill task
+9. add, commit, push
+10. check out progress on tasks
+
+etc.: Milestones, Wiki
