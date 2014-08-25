@@ -16,18 +16,32 @@ why version control?
 ========================================================
 incremental: true
 
-- tractability of work 
-- documentation
-- progressive development
-- clean working directory
+- traceability of work progress
+- **documentation**
+
 
 why version control?
 ========================================================
 incremental: true
 
+- clean working directory
+- non-linear development branches
 - robust, structured backups
-- collaborative work
+- **progressive development**
+
+why version control?
+========================================================
+incremental: true
+
+- collaborative work 
+- reviewing
 - easy publication
+- **openness**
+
+why version control?
+========================================================
+
+## **Quality management!**
 
 You allready use version control!
 ========================================================
@@ -62,10 +76,10 @@ filename            | last updated
 ------------------- | ----------
 project.c           | 01.08.2014
 project_v0.1.c      | 02.08.2014
+project_v0.21.c     | 04.08.2014
+project_v0.2_sonia.c| 04.08.2014
+project_v0.21_s.c   | 05.08.2014
 project_v0.2.c      | 07.08.2014
-project_v0.21.c     | 04.08.2014
-project_v0.2_sonia.c| 04.08.2014
-project_v0.21_s.c   | 05.08.2014
 
 But:
 ========================================================
@@ -82,7 +96,8 @@ git
 ========================================================
 - a version control system
 - robust against errors
-- platform independent: command line *or* clients
+- platform independent
+- geeky command line *or* user-friendly visual software
 
 ```
 $ git
@@ -272,6 +287,7 @@ type: section
 
 Everyday git
 ========================================================
+incremental: true
 
 1. work on files
 2. commit to repository
@@ -289,6 +305,7 @@ Everyday git
 
 Once in a while git
 ========================================================
+incremental: true
 
 3. tagging
 
@@ -317,8 +334,9 @@ graphical Clients
 many more: 
 http://git-scm.com/downloads/guis
 
-Backing up & Sync
+Backing up & Syncing
 ========================================================
+type: section
 
 Working with remotes
 ========================================================
@@ -355,7 +373,7 @@ GitHub
 - private repositories (commercial)
 - manage development (teams, tasks, milestones, wikis)
 
-Alternatives: [Bitbucket](https://bitbucket.org/) (free private for small teams), [GitLab Cloud](https://about.gitlab.com/gitlab-com/)(unlimited free private), and more
+*Alternatives:* <br>[Bitbucket](https://bitbucket.org/) (free private for small teams), <br> [GitLab Cloud](https://about.gitlab.com/gitlab-com/) (unlimited free private), <br> self-hosted git server, and many more
 
 Resources
 ========================================================
@@ -404,10 +422,10 @@ in same repository:
 type: sub-section
 
 1. create a git repository on Github.
-2. clone to Local PC: <br> `git clone https://github.com`
+2. clone to local Computer: <br> `git clone https://github.com/user/repo`
 3. generate content
 4. add and commit
-5. push
+5. push (requires password)
 6. edit online
 7. pull
 
@@ -417,13 +435,29 @@ type: sub-section
 type: sub-section
 
 1. clone shared project
-3. create a file
-4. add, commit, push
-5. assign a task
-6. check your tasklist
-7. pull repository
-8. fullfill task
-9. add, commit, push
-10. check out progress on tasks
+2. create a file
+3. add, commit, push
+4. assign an issue (i.e. a task)
+5. check your tasklist
+6. pull repository
+7. fullfill task
+8. add, commit, push
+9. check out progress on tasks
 
 etc.: Milestones, Wiki
+
+Final Thoughts:
+========================================================
+type: section
+
+Open source
+========================================================
+
+- turn private repos public!
+- choose a license: GPL or MIT for code, Creative Commons for text and data
+
+Why? 
+- scientific work is of public concern
+- enables re-use or inspiration
+- transparency adds credibility
+- scientific culture: acceptance of failure
