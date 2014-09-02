@@ -1,0 +1,78 @@
+</style>
+
+<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+<style>
+
+
+.icon {
+  font-family: "FontAwesome";  
+}
+
+.reveal h1 {
+  font-weight: 700;
+  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Big section header */
+
+.section .reveal h2 {
+  font-weight: 700;
+  font-size: 3em;
+  margin-top: 25%;
+  line-height: 0.9em;
+  letter-spacing: -0.02em;
+  text-align: center;
+  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4);
+
+}
+
+.reveal section img {
+   border: none;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.15);
+}
+
+
+.reveal table {
+  margin: 0 auto;
+  border-width: 0;
+  border-spacing: 2px;
+  border-style: dotted;
+  border-color: gray;
+  border-collapse: collapse;
+  font-size: 0.7em;
+}
+
+.reveal table th {
+  border-width: 0;
+  font-style: italic;
+  padding-left: 10px;
+  padding-right: 100px;
+  font-weight: bold;
+  border-color: gray;
+}
+
+.reveal table  td {
+  border-width: 0;
+  padding-left: 10px;
+  padding-right: 100px;
+  border-style: none;
+  border-color: gray;
+}
+
+
+
+.reveal pre code {
+  color: #EEE;
+  background-color: #222;
+  border: none;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.15);
+}
+
+
+.file {}
+
+.file li {
+ list-style: none; 
+}
