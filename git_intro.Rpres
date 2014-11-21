@@ -7,6 +7,18 @@ font-family: 'Open Sans'
 transition: none
 
 
+We are going to learn today:
+========================================================
+1. version control is useful, really!
+2. **git** is a simple version control system  
+3. how to get started using git for our personal work
+
+### we might learn later
+
+4. how to use git branches for exploration 
+4. how git can be used to collaborate
+5. how to fix version conflicts
+
 Introduction
 ========================================================
 type: section
@@ -16,34 +28,73 @@ why version control?
 ========================================================
 incremental: true
 
-- traceability of work progress
-- **documentation**
+- know what you did and when you did it! 
+- (documentation & development history) 
+- do robust, structured backups!
 
-
-why version control?
-========================================================
-incremental: true
-
-- clean working directory
-- non-linear development branches
-- robust, structured backups
-- **progressive development**
+## reproducibility
 
 why version control?
 ========================================================
 incremental: true
 
-- collaborative work 
-- reviewing
-- easy publication
-- **openness**
+- don't go back and forth!
+- manage your non-linear development! 
+- write re-usable code!
+
+## progressive development
 
 why version control?
 ========================================================
+incremental: true
 
-## **Quality management!**
+- collaborate on code and text! 
+- share your code!
+- (with reviewers and the public)
 
-You allready use version control!
+## openness
+
+========================================================
+
+## reproducibility
+## progressive development
+## openness
+
+Quality management!
+========================================================
+type: section
+
+
+But: hey! 
+========================================================
+type: section
+
+You allready use version control! 
+========================================================
+
+### *(kind of)*
+
+
+You allready use version control! 
+========================================================
+type: files
+
+filename            | last updated               
+------------------- | ----------
+project.c           | 01.08.2014
+
+
+You allready use version control! 
+========================================================
+type: files
+
+filename            | last updated               
+------------------- | ----------
+project.c           | 01.08.2014
+project_v0.1.c      | 02.08.2014
+
+
+You allready use version control! 
 ========================================================
 type: files
 
@@ -83,25 +134,52 @@ project_v0.2.c      | 07.08.2014
 
 But:
 ========================================================
-incremental: true
 
-- annoying: there are so many files! 
-- confusing: which is the latest version?
-- not progressive: did you fix that bug in the right file? 
-- requires manual back-ups
+it's annoying!
+========================================================
+There are so many files! 
+
+it's confusing!
+========================================================
+Which one was the latest version?
+
+it's not progressive!
+========================================================
+Did you fix that bug in the right file now?  
+What version of that function is this?  
+Which version of the code was used to produce this result? 
+
+it's not helping at all
+========================================================
+I still need to do manual back-ups!  
+I still cannot reproduce what I did!
 
 
+
+git:  a version control "system"
+========================================================
+type: section
 
 git
 ========================================================
+incremental: true
+
 - a version control system
 - robust against errors
 - platform independent
-- geeky command line *or* user-friendly visual software
+- git works for writing, too!
+- geeky command line 
 
 ```
-$ git
+$ git push origin master
 ```
+- *or* user-friendly graphical software
+
+
+========================================================
+
+![](figures/github_for_windows.png)
+
 
 git
 ========================================================
@@ -128,280 +206,311 @@ filename            | last updated
 project.c           | 03.08.2014
 
 
+
+
 Basics
 ========================================================
 type: section
 
-How does it work?
+Concepts
 ========================================================
 
-Terminal:
-
-```
-$ git init
-```
+*Classic filesystems:*
+- files:  
+  <img src = "figures/file.svg" style = "height: 2em; margin-bottom: 0; "/>
+- directories:  
+  <img src = "figures/folder.svg" style = "height: 1.4em; margin-bottom: 0; "/>
 
 ***
-![](figures/git_basics_Page_1.jpg)
 
-How does it work?
-========================================================
-
-Terminal:
-
-```
-$ git status
-# On branch master
-# Changes not staged for commit
-#
-# Untracked files: 
-# 
-#      project.c
-#
-
-```
-
-***
-![](figures/git_basics_Page_2.jpg)
-
-How does it work?
-========================================================
-
-Terminal:
-
-```
-$ git add project.c
-```
-
-***
-![](figures/git_basics_Page_3.jpg)
-
-How does it work?
-========================================================
-
-Terminal:
-
-```
-$ git commit -m "initial project.c"
-```
-
-***
-![](figures/git_basics_Page_4.jpg)
-
-How does it work?
-========================================================
-
-Terminal:
-
-```
-$ git add project.c
-```
-
-***
-![](figures/git_basics_Page_5.jpg)
-
-How does it work?
-========================================================
-
-Terminal:
-
-```
-$ git commit -m "fixed bug project.c"
-```
-
-***
-![](figures/git_basics_Page_6.jpg)
+*git:*
+- repository:   
+  - commits:  
+  <img src = "figures/commit.svg" style = "height: 2em; margin-bottom: 0; "/>
+  - pointers:  
+  <img src = "figures/pointer.svg" style = "height: 1em; margin-bottom: 0;"/>
+  - working directory:  
+    <img src = "figures/file.svg" style = "height: 2em; margin-bottom: 0; "/>  & <img src = "figures/folder.svg" style = "height: 1.4em; margin-bottom: 0; "/>
 
 
-How does it work?
-========================================================
+<!-- here: replace series about commits with a basic network graph. -->
 
-Terminal:
-
-```
-$ git add project.c
-```
-
-***
-![](figures/git_basics_Page_7.jpg)
-
-How does it work?
-========================================================
-
-Terminal:
-
-```
-$ git commit -m "fixed bug project.c"
-$ git tag v1.0 -m "first version project.c"
-
-```
-
-***
-![](figures/git_basics_Page_8.jpg)
-
-How does it work?
-========================================================
-
-![](figures/commits_Page_1.png)
-
-How does it work?
-========================================================
-
-![](figures/commits_Page_2.png)
-
-How does it work?
-========================================================
-
-![](figures/commits_Page_3.png)
-
-
-How does it work?
-========================================================
-
-![](figures/commits_Page_5.png)
-
-How does it work?
-========================================================
-
-![](figures/commits_Page_6.png)
-
-How does it work?
-========================================================
-
-![](figures/commits_Page_7.png)
-
-How does it work?
-========================================================
-
-![](figures/commits_Page_8.png)
-
-How does it work?
-========================================================
-
-![](figures/commits_Page_9.png)
-
-
-Workflow
-========================================================
+\ begin{technical}
+=======================================================
 type: section
 
-Everyday git
+What is a repository?
 ========================================================
 incremental: true
 
-1. work on files
-2. commit to repository
-    - adding files
-    
-    ```
-    $ git add [file]
-    ```
-    - commit + message
-    
-    ```
-    $ git commit -m "edit [file]"
-    ```
+<img src="figures/folder.svg" style = "height: 6em;">  
+{demo}  
+
+- a directory
+- it contains meta-data  
+- it contains *'commits'*  
 
 
-Once in a while git
+What are commits?
 ========================================================
 incremental: true
 
-3. tagging
+<img src="figures/commit.svg" style = "height: 5em;">  
 
-  ```
-  $ git tag [v*.*.*] -m "[newest version]"
-  ```
+- instructions to change one file or multiple files
+- instructions to remove or add files
+
+- each commit has a unique name: a HASH-tag 
+  `#4kjb421kj43cs70sdb93ntl4865gbfse9`
+- meta info: 
+  - commiter name and e-mail
+  - time and date of commit
+  - ...
+  - **a reference to it's parent (pointer)**
+
+what are pointers? 
+========================================================
+incremental: true
+
+
+<img src="figures/pointer.svg" style = "height: 2.5em; margin: 1.5em 0;">  
+
+- **a reference to a commit** 
+- a reference to another pointer
+- they connect commits 'upstream'
+
+Types of pointers:  
+- 'tags' <img src="figures/tag1-0.svg" style = "height: 1em; margin: 0;">  <img src="figures/tag1-2.svg" style = "height: 1em; margin: 0;"> 
+- 'branches' <img src="figures/branch-master.svg" style = "height: 1em; margin: 0;"> <img src="figures/branch-test.svg" style = "height: 1em; margin: 0;"> 
+- **the 'HEAD' of your repository** <img src="figures/HEAD.svg" style = "height: 1em; margin: 0;">   
+  (i.e. the working directory!)
+
+
+What is a repository, really? 
+========================================================
+incremental: true
+
+- a repository basically consists of commits. 
+- each commit has a pointer to it's parent
+- other pointers, that *refer to important  
+  commits in project history*
+
+
+What is a repository, really? 
+========================================================
+
+- a repository basically consists of commits. 
+- each commit has a pointer to it's parent
+- other pointers, that *refer to important  
+  commits in project history*
+
+<img src="figures/commit_alone.svg" style = "height: 1em;"><img src="figures/commit.svg" style = "height: 1em;"><img src="figures/commit.svg" style = "height: 1em;"><img src="figures/branch-master.svg" style = "height: 0.8em;">  <img src="figures/HEAD.svg" style = "height: 0.8em;">
+
+
+What is a repository, really? 
+========================================================
+
+<img src="figures/tree-full.svg" style = "height:500px;">
+
+the working directory
+========================================================
+
+<img src="figures/tree-master.svg" style = "height:500px;">
+
+- a directory with files
+- the accumulated commits at 'HEAD'
+- the current 'check-out'
+
+
+the working directory
+========================================================
+
+<img src="figures/tree-feature.svg" style = "height:500px;">
+
+And this is how 'time travelling' works: 
+
+- you can move HEAD to *any* other commit
+  - to branches
+
+
+the working directory
+========================================================
+
+<img src="figures/tree-f1.svg" style = "height:500px;">
+
+And this is how 'time travelling' works: 
+
+- you can move HEAD to *any* other commit
+  - to tags
+
+
+the working directory
+========================================================
+
+<img src="figures/tree-master.svg" style = "height:500px;">
+
+And this is how 'time travelling' works: 
+
+- you can move HEAD to *any* other commit
+  - back to 'master' branch
   
-5. time travelling
-
-  ```
-  $ git checkout v1.0
-  $ git checkout master
-  ```
-
-6. branching
-
-
-graphical Clients
+the working directory
 ========================================================
 
-- Windows: [GitHub for Windows](http://windows.github.com/)
-- Mac: [GitHub for Mac](http://mac.github.com/)
-- Linux: [git-cola](http://git-cola.github.com/)
-- all: [GitEye](http://www.giteyeapp.com/), [RStudio](http://www.rstudio.com) and other IDEs have plug-ins
+<img src="figures/tree-hash.svg" style = "height:500px;">
 
-many more: 
-http://git-scm.com/downloads/guis
+And this is how 'time travelling' works: 
 
-Backing up & Syncing
-========================================================
+- you can move HEAD to *any* other commit
+  - to any hash-tag
+
+  
+\ end{technical}
+=======================================================
 type: section
 
-Working with remotes
-========================================================
-- for syncing your computers
-- or collaboration
-
-Working with remotes
-========================================================
-
-![](figures/remotes_Page_1.png)
-
-Working with remotes
-========================================================
-![](figures/remotes_Page_2.png)
-
-Working with remotes
-========================================================
-![](figures/remotes_Page_3.png)
-
-Working with remotes
-========================================================
-![](figures/remotes_Page_4.png)
-
-Working with remotes
-========================================================
-![](figures/remotes_Page_5.png)
-
-
-GitHub
-========================================================
-
-- remote repositories
-- **free** for open source projects (fully public!)
-- private repositories (commercial)
-- manage development (teams, tasks, milestones, wikis)
-
-*Alternatives:* <br>[Bitbucket](https://bitbucket.org/) (free private for small teams), <br> [GitLab Cloud](https://about.gitlab.com/gitlab-com/) (unlimited free private), <br> self-hosted git server, and many more
-
-Resources
-========================================================
-type: section
-
-Resources
-========================================================
-
-https://www.atlassian.com/git
-
-http://git-scm.com/book/
-
-http://git-scm.com/
-
-https://training.github.com/kit/
-
-Exercises
+Questions?
 ========================================================
 type: section
 
 
-1 | working locally
+How does it work?
+========================================================
+
+What you need to learn:
+- get startet **(Exercise 1)**
+  - how to create a repository
+  - how to build a commit 
+- time travelling  **(Exercise 2)**
+  - how to set tags
+  - how to move your HEAD
+- how to back-up or sync  **(Exercise 3)**
+  - configure *remotes*
+  - push and pull
+
+
+1 | get started
 ========================================================
 type: sub-section
 
-1. create a git repository locally
+1. create a git repository
 2. generate content
-3. add and commit
+3. do commits
+
+Create a repository
+========================================================
+
+open a terminal
+
+```
+$
+```
+
+Create a repository
+========================================================
+
+Create a new folder. 
+
+```
+$ mkdir test
+$ cd test
+$
+```
+
+Create a repository
+========================================================
+
+Initialise a git repository.
+
+```
+$ mkdir test
+$ cd test
+$ git init
+Initialized empty Git repository ...
+$
+```
+
+Generate initial content
+========================================================
+
+- create a *text* file (*e.g.*, test.txt)
+- create/copy a code file
+- ... 
+
+Generate initial content
+========================================================
+
+check the status!
+
+```
+$ git status
+On branch master
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        test.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+
+Commit
+========================================================
+
+This is a two step process:
+
+1. staging files for next commit  
+
+  ```
+  $ git add test.txt
+  ```
+  - chose files or edits for the next commit
+  - wrap 'meaningful' commits
+
+2. commit to repository 
+    
+```
+$ git commit -m "edit test.txt: fix #23"
+```
+  - commit message is obligatory: `-m "..."` 
+
+Commit
+========================================================
+
+check status again!
+
+```
+$ git status
+On branch master
+nothing to commit, working directory clean
+```
+
+Commit
+========================================================
+
+have a look at your repository tree!
+
+```
+$ git log
+commit a9b0697265feb5013eced9c1befb9a10a94a66cb
+Author: Florian Schneider <florian.schneider@univ-montp2.fr>
+Date:   Fri Nov 21 16:30:53 2014 +0100
+
+    edit test.txt
+    
+```
+
+1 | get started
+========================================================
+type: sub-section
+
+1. create a git repository
+2. edit content
+3. do commits
+
+(repeat 2 & 3 a couple of times! use `git status` and `git log`!)
 
 
 2 | tagging
@@ -410,18 +519,181 @@ type: sub-section
 
 in same repository:
 
-1. tag
+1. add a 'tag'
 2. edit content 
 3. add and commit
 5. check history: `git log` 
 6. checkout tag
 7. return to latest version
 
-3 | GitHub
+
+Add a tag
+========================================================
+
+Terminal:
+
+```
+$ git tag -a v1.0 -m "first version of project"
+$
+```
+
+
+Commit
+========================================================
+
+continue work: 
+ - edit
+ - add and commit 
+
+
+Time traveling
+========================================================
+
+```
+$ git tag
+v1.0
+$
+```
+
+
+Time traveling
+========================================================
+
+```
+$ git tag
+v1.0
+$ git checkout v1.0
+$
+```
+
+look at your files!
+
+
+
+Time traveling
+========================================================
+
+```
+$ git tag
+v1.0
+$ git checkout v1.0
+$ git checkout master
+$
+```
+
+look at your files!
+
+1 & 2 | completed
 ========================================================
 type: sub-section
 
-1. create a git repository on Github.
+what you learned:
+
+- create a new repository
+- add and commit
+- check `log` and `status`
+- add 'tags' as references
+- check-out different commits
+
+
+Congrats!
+========================================================
+type: section
+
+graphical Clients
+========================================================
+
+- Windows: [GitHub for Windows](http://windows.github.com/)
+- Mac: [GitHub for Mac](http://mac.github.com/)
+- Linux: [git-cola](http://git-cola.github.com/)
+- all: [smartGitHg](http://www.syntevo.com/smartgit/), [GitEye](http://www.giteyeapp.com/), [RStudio](http://www.rstudio.com) and other IDEs have plug-ins
+
+and many more: [http://git-scm.com/downloads/guis](http://git-scm.com/downloads/guis)
+
+
+Remotes
+========================================================
+type: section
+
+Why working with remotes?
+========================================================
+- back-up
+- syncing your computers
+- collaboration
+
+
+Remotes
+========================================================
+
+![](figures/remotes_Page_1.png)
+
+Remotes
+========================================================
+![](figures/remotes_Page_2.png)
+
+Remotes
+========================================================
+![](figures/remotes_Page_3.png)
+
+Remotes
+========================================================
+![](figures/remotes_Page_4.png)
+
+Remotes
+========================================================
+![](figures/remotes_Page_5.png)
+
+
+GitLab at UM2
+========================================================
+
+[https://gitlab.info-ufr.univ-montp2.fr/](https://gitlab.info-ufr.univ-montp2.fr/)
+
+![](figures/gitlab.png)
+
+GitLab at UM2
+========================================================
+
+[https://gitlab.info-ufr.univ-montp2.fr/](https://gitlab.info-ufr.univ-montp2.fr/)
+
+- no third party, non-commercial
+- hosting of remote repositories
+- free private or public projects 
+- collaborate (teams, tasks)
+
+GitHub
+========================================================
+
+[https://github.com/](https://github.com/)
+
+![](figures/github.png)
+
+GitHub
+========================================================
+
+[https://github.com/](https://github.com/)
+
+- hosting of remote repositories
+- free for open source projects (fully public!)
+- private repositories (commercial)
+- collaborate (teams, access control)
+- manage projects (tasks, milestones, wikis)
+
+Alternatives 
+========================================================
+
+[Bitbucket](https://bitbucket.org/) (free private for small teams)  
+
+[GitLab Cloud](https://about.gitlab.com/gitlab-com/) (unlimited free private)
+
+self-hosted git server, and many more
+
+
+3 | Remotes
+========================================================
+type: sub-section
+
+1. create a git repository on Gitlab or Github.
 2. clone to local Computer: <br> `git clone https://github.com/user/repo`
 3. generate content
 4. add and commit
@@ -430,21 +702,21 @@ type: sub-section
 7. pull
 
 
-4 | Collaboration
+Resources
 ========================================================
-type: sub-section
+type: section
 
-1. clone shared project
-2. create a file
-3. add, commit, push
-4. assign an issue (i.e. a task)
-5. check your tasklist
-6. pull repository
-7. fullfill task
-8. add, commit, push
-9. check out progress on tasks
+Resources
+========================================================
 
-etc.: Milestones, Wiki
+https://www.atlassian.com/git/
+
+http://git-scm.com/book/
+
+http://git-scm.com/
+
+https://training.github.com/kit/
+
 
 Final Thoughts:
 ========================================================
@@ -454,10 +726,9 @@ Open source
 ========================================================
 
 - turn private repos public!
-- choose a license: GPL or MIT for code, Creative Commons for text and data
+- [choose a license](http://choosealicense.com/): GPL or MIT for code, Creative Commons for text and data
 
 Why? 
 - scientific work is of public concern
 - enables re-use or inspiration
 - transparency adds credibility
-- scientific culture: acceptance of failure
