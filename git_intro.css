@@ -70,6 +70,15 @@
   box-shadow: 0 0 0 rgba(0, 0, 0, 0.15);
 }
 
+.reveal li {
+  font-size: 0.9em;
+  margin-bottom: 0.1em;
+  margin-top: 0.1em;
+}
+
+.reveal p {
+  margin-bottom: 0.3em;
+}
 
 .file {}
 

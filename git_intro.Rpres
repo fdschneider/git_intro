@@ -9,15 +9,12 @@ transition: none
 
 We are going to learn today:
 ========================================================
+incremental: true
+
 1. version control is useful, really!
 2. **git** is a simple version control system  
 3. how to get started using git for our personal work
 
-### we might learn later
-
-4. how to use git branches for exploration 
-4. how git can be used to collaborate
-5. how to fix version conflicts
 
 Introduction
 ========================================================
@@ -29,7 +26,7 @@ why version control?
 incremental: true
 
 - know what you did and when you did it! 
-- (documentation & development history) 
+- documentation & development history 
 - do robust, structured backups!
 
 ## reproducibility
@@ -49,33 +46,35 @@ why version control?
 incremental: true
 
 - collaborate on code and text! 
-- share your code!
-- (with reviewers and the public)
+- enable structured code review 
+- publish your code 
 
 ## openness
 
+
 ========================================================
+incremental: true
 
 ## reproducibility
 ## progressive development
 ## openness
+## = 
+## Quality management!
 
-Quality management!
-========================================================
-type: section
+
 
 
 But: hey! 
 ========================================================
 type: section
 
-You allready use version control! 
+You already use version control! 
 ========================================================
 
 ### *(kind of)*
 
 
-You allready use version control! 
+You already use version control! 
 ========================================================
 type: files
 
@@ -84,7 +83,7 @@ filename            | last updated
 project.c           | 01.08.2014
 
 
-You allready use version control! 
+You already use version control! 
 ========================================================
 type: files
 
@@ -94,7 +93,7 @@ project.c           | 01.08.2014
 project_v0.1.c      | 02.08.2014
 
 
-You allready use version control! 
+You already use version control! 
 ========================================================
 type: files
 
@@ -106,7 +105,7 @@ project_v0.2.c      | 03.08.2014
 project_v0.21.c     | 04.08.2014
 project_v0.2_sonia.c| 04.08.2014
 
-You allready use version control!
+You already use version control!
 ========================================================
 type: files
 
@@ -119,7 +118,7 @@ project_v0.21.c     | 04.08.2014
 project_v0.2_sonia.c| 04.08.2014
 project_v0.21_s.c   | 05.08.2014
 
-You allready use version control!
+You already use version control!
 ========================================================
 type: files
 
@@ -137,24 +136,26 @@ But:
 
 it's annoying!
 ========================================================
-There are so many files! 
+- There are so many files! 
 
 it's confusing!
 ========================================================
-Which one was the latest version?
+- Which one was the latest version?
+- OMG, I can show that to no one!
 
-it's not progressive!
+it's not progressive or reproducible
 ========================================================
-Did you fix that bug in the right file now?  
-What version of that function is this?  
-Which version of the code was used to produce this result? 
+- Did I fix that bug in the right file now?  
+- What version of that function is this?  
+- Which version of the code was used to produce this result? 
 
 it's not helping at all
 ========================================================
-I still need to do manual back-ups!  
-I still cannot reproduce what I did!
+incremental:true
 
-
+- I still need to do manual back-ups!  
+- I still cannot reproduce what I did!
+- Others cannot reproduce what I did!
 
 git:  a version control "system"
 ========================================================
@@ -164,10 +165,12 @@ git
 ========================================================
 incremental: true
 
-- a version control system
+- it's a version control "system" 
 - robust against errors
-- platform independent
-- git works for writing, too!
+- transparent structure
+- works for code
+- works for databases
+- works for writing, too!
 - geeky command line 
 
 ```
@@ -216,11 +219,12 @@ Concepts
 ========================================================
 
 *Classic filesystems:*
-- files:  
-  <img src = "figures/file.svg" style = "height: 2em; margin-bottom: 0; "/>
+
 - directories:  
   <img src = "figures/folder.svg" style = "height: 1.4em; margin-bottom: 0; "/>
-
+- files:  
+  <img src = "figures/file.svg" style = "height: 2em; margin-bottom: 0; "/>
+  
 ***
 
 *git:*
@@ -235,7 +239,7 @@ Concepts
 
 <!-- here: replace series about commits with a basic network graph. -->
 
-\ begin{technical}
+\begin{tchncl}
 =======================================================
 type: section
 
@@ -246,7 +250,7 @@ incremental: true
 <img src="figures/folder.svg" style = "height: 6em;">  
 {demo}  
 
-- a directory
+- it's a directory
 - it contains meta-data  
 - it contains *'commits'*  
 
@@ -260,13 +264,18 @@ incremental: true
 - instructions to change one file or multiple files
 - instructions to remove or add files
 
-- each commit has a unique name: a HASH-tag 
-  `#4kjb421kj43cs70sdb93ntl4865gbfse9`
+What are commits?
+========================================================
+incremental: true
+
+<img src="figures/commit.svg" style = "height: 5em;">  
+
+- each commit has a unique name: a **hash-tag** 
+  `#5b26a8379e0f1ea6dd87916d738a49d118361676`
 - meta info: 
-  - commiter name and e-mail
-  - time and date of commit
-  - ...
-  - **a reference to it's parent (pointer)**
+  - commiter name and e-mail, time and date of commit
+  - a **commit message**
+  - a reference to it's **parent** (pointer)
 
 what are pointers? 
 ========================================================
@@ -276,109 +285,143 @@ incremental: true
 <img src="figures/pointer.svg" style = "height: 2.5em; margin: 1.5em 0;">  
 
 - **a reference to a commit** 
-- a reference to another pointer
-- they connect commits 'upstream'
+- they connect commits *upstream*
+
+what are pointers? 
+========================================================
+incremental: true
+
+<img src="figures/pointer.svg" style = "height: 2.5em; margin: 1.5em 0;">  
 
 Types of pointers:  
 - 'tags' <img src="figures/tag1-0.svg" style = "height: 1em; margin: 0;">  <img src="figures/tag1-2.svg" style = "height: 1em; margin: 0;"> 
 - 'branches' <img src="figures/branch-master.svg" style = "height: 1em; margin: 0;"> <img src="figures/branch-test.svg" style = "height: 1em; margin: 0;"> 
 - **the 'HEAD' of your repository** <img src="figures/HEAD.svg" style = "height: 1em; margin: 0;">   
-  (i.e. the working directory!)
+
 
 
 What is a repository, really? 
 ========================================================
 incremental: true
 
-- a repository basically consists of commits. 
+- a repository consists of commits
+- each commit contains instructions for edits
 - each commit has a pointer to it's parent
-- other pointers, that *refer to important  
-  commits in project history*
+- additional pointers as references
 
 
 What is a repository, really? 
 ========================================================
 
-- a repository basically consists of commits. 
+- a repository consists of commits
+- each commit contains instructions for edits
 - each commit has a pointer to it's parent
-- other pointers, that *refer to important  
-  commits in project history*
+- additional pointers as references
 
-<img src="figures/commit_alone.svg" style = "height: 1em;"><img src="figures/commit.svg" style = "height: 1em;"><img src="figures/commit.svg" style = "height: 1em;"><img src="figures/branch-master.svg" style = "height: 0.8em;">  <img src="figures/HEAD.svg" style = "height: 0.8em;">
-
+<img src="figures/commit_alone.svg" style = "height: 1em;"><img src="figures/commit.svg" style = "height: 1em;"><img src="figures/branch-master.svg" style = "height: 0.8em;">  <img src="figures/HEAD.svg" style = "height: 0.8em;"> <img src="figures/folder.svg" style = "height: 1em;">
 
 What is a repository, really? 
 ========================================================
 
-<img src="figures/tree-full.svg" style = "height:500px;">
+- a repository consists of commits
+- each commit contains instructions for edits
+- each commit has a pointer to it's parent
+- additional pointers as references
+
+<img src="figures/commit_alone.svg" style = "height: 1em;"><img src="figures/commit.svg" style = "height: 1em;"><img src="figures/commit.svg" style = "height: 1em;"><img src="figures/branch-master.svg" style = "height: 0.8em;">  <img src="figures/HEAD.svg" style = "height: 0.8em;">  <img src="figures/folder.svg" style = "height: 1em;">
+
+What is a repository, really? 
+========================================================
+
+- a repository consists of commits
+- each commit contains instructions for edits
+- each commit has a pointer to it's parent
+- additional pointers as references
+
+<img src="figures/commit_alone.svg" style = "height: 1em;"><img src="figures/commit.svg" style = "height: 1em;"><img src="figures/commit.svg" style = "height: 1em;"><img src="figures/commit.svg" style = "height: 1em;"><img src="figures/branch-master.svg" style = "height: 0.8em;">  <img src="figures/HEAD.svg" style = "height: 0.8em;"> <img src="figures/folder.svg" style = "height: 1em;">
+
+What is a repository, really? 
+========================================================
+
+<img src="figures/tree-full.svg" style = "height:450px;">
 
 the working directory
 ========================================================
 
-<img src="figures/tree-master.svg" style = "height:500px;">
+<img src="figures/tree-master.svg" style = "height:450px;">
 
-- a directory with files
-- the accumulated commits at 'HEAD'
-- the current 'check-out'
+**the working directory is  
+showing the accumulated commits at 'HEAD'**
 
-
-the working directory
-========================================================
-
-<img src="figures/tree-feature.svg" style = "height:500px;">
-
-And this is how 'time travelling' works: 
-
-- you can move HEAD to *any* other commit
-  - to branches
 
 
 the working directory
 ========================================================
 
-<img src="figures/tree-f1.svg" style = "height:500px;">
+<img src="figures/tree-feature.svg" style = "height:450px;">
 
-And this is how 'time travelling' works: 
-
-- you can move HEAD to *any* other commit
-  - to tags
+And this is how 'time travelling' works:  
+you can move HEAD to **branches**
 
 
 the working directory
 ========================================================
 
-<img src="figures/tree-master.svg" style = "height:500px;">
+<img src="figures/tree-f1.svg" style = "height:450px;">
 
-And this is how 'time travelling' works: 
+And this is how 'time travelling' works:  
+you can move HEAD to **tags**
 
-- you can move HEAD to *any* other commit
-  - back to 'master' branch
+
+the working directory
+========================================================
+
+<img src="figures/tree-master.svg" style = "height:450px;">
+
+And this is how 'time travelling' works:  
+you can move HEAD back to **'master' branch**
   
 the working directory
 ========================================================
 
-<img src="figures/tree-hash.svg" style = "height:500px;">
+<img src="figures/tree-hash.svg" style = "height:450px;">
 
-And this is how 'time travelling' works: 
-
-- you can move HEAD to *any* other commit
-  - to any hash-tag
+And this is how 'time travelling' works:  
+you can move HEAD to *any* commit (per hash-tag)
 
   
-\ end{technical}
+\end{tchncl}
 =======================================================
 type: section
+
 
 Questions?
 ========================================================
 type: section
 
 
+A word on filetypes
+=======================================================
+
+### binary files 
+- .docx, .ppt, .pdf, .jpg, .xls
+- 'closed' filetypes
+- edits can't be tracked
+- **not well suited for VC**
+
+***
+
+### pure text files
+- .r, .cpp, .txt, .tex, .md, .csv
+- 'open' filetypes
+- **perfect for VC**
+
+
 How does it work?
 ========================================================
 
 What you need to learn:
-- get startet **(Exercise 1)**
+- git startet **(Exercise 1)**
   - how to create a repository
   - how to build a commit 
 - time travelling  **(Exercise 2)**
@@ -389,7 +432,7 @@ What you need to learn:
   - push and pull
 
 
-1 | get started
+1 | git started
 ========================================================
 type: sub-section
 
@@ -502,7 +545,7 @@ Date:   Fri Nov 21 16:30:53 2014 +0100
     
 ```
 
-1 | get started
+1 | git started
 ========================================================
 type: sub-section
 
@@ -644,6 +687,27 @@ Remotes
 ![](figures/remotes_Page_5.png)
 
 
+Clones
+========================================================
+
+
+- you can **clone** existing repositories from remotes
+
+```
+git clone https://github.com/cascade-wp6/git_intro.git
+```
+
+- your local repository will refer to the *original* repository as **origin**
+- you can **pull** from and **push** to origin:
+
+```
+git pull origin master
+git push origin master
+```
+
+more info: [http://git-scm.com/book](http://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes)
+
+
 GitLab at UM2
 ========================================================
 
@@ -676,8 +740,8 @@ GitHub
 - hosting of remote repositories
 - free for open source projects (fully public!)
 - private repositories (commercial)
-- collaborate (teams, access control)
-- manage projects (tasks, milestones, wikis)
+- collaborate (issues, teams, access control)
+- manage projects (milestones, wikis)
 
 Alternatives 
 ========================================================
@@ -702,6 +766,24 @@ type: sub-section
 7. pull
 
 
+
+What we learned today:
+========================================================
+incremental: true
+
+1. version control is useful, really!
+2. **git** is a simple version control system  
+3. how to get started using git for our personal work
+
+<br>
+
+### we might learn later
+
+- how to fix version conflicts
+- how to develop workflows
+- how git can be used to collaborate
+
+
 Resources
 ========================================================
 type: section
@@ -724,11 +806,13 @@ type: section
 
 Open source
 ========================================================
+type: sub-section
 
 - turn private repos public!
 - [choose a license](http://choosealicense.com/): GPL or MIT for code, Creative Commons for text and data
 
 Why? 
-- scientific work is of public concern
-- enables re-use or inspiration
-- transparency adds credibility
+- scientific work is public property
+- speeding up science: enable re-use & inspiration
+- adds credibility and originality
+- reproducibility 
