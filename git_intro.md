@@ -1,7 +1,7 @@
 git version control 
 ========================================================
-author: Florian D. Schneider
-date: 27.08.2014
+author: Florian D. Schneider 
+date: 19.05.2016
 font-import: http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic&subset=latin,greek-ext,greek
 font-family: 'Open Sans'
 transition: none
@@ -13,7 +13,7 @@ incremental: true
 
 1. version control is useful, really!
 2. **git** is a simple version control system  
-3. how to get started using git for our personal work
+3. use **Github** for collaboration on code 
 
 
 Introduction
@@ -141,7 +141,7 @@ it's annoying!
 it's confusing!
 ========================================================
 - Which one was the latest version?
-- OMG, I can show that to no one!
+- OMG, I cannot show that to anyone!
 
 it's not progressive or reproducible
 ========================================================
@@ -156,6 +156,10 @@ incremental:true
 - I still need to do manual back-ups!  
 - I still cannot reproduce what I did!
 - Others cannot reproduce what I did!
+- Collaboration is not straightforward!
+
+
+
 
 git:  a version control "system"
 ========================================================
@@ -167,22 +171,12 @@ incremental: true
 
 - it's a version control "system" 
 - robust against errors
-- transparent structure
 - works for code
 - works for databases
 - works for writing, too!
-- geeky command line 
+- clean working directory
 
-```
-$ git push origin master
-```
-- *or* user-friendly graphical software
-
-
-========================================================
-
-![](figures/github_for_windows.png)
-
+<!-- demo of folder -->
 
 git
 ========================================================
@@ -209,190 +203,107 @@ filename            | last updated
 project.c           | 03.08.2014
 
 
+git
+========================================================
+incremental: true
+
+- geeky command line 
+
+```
+$ git push origin master
+```
+- *or* user-friendly graphical software
 
 
-Basics
+========================================================
+
+![](figures/github_for_windows.png)
+
+
+
+git 
+========================================================
+graphical clients:
+
+- Windows & Mac: [GitHub for Desktop](http://desktop.github.com/)
+- Linux: [git-cola](http://git-cola.github.com/)
+- also: [RStudio](http://www.rstudio.com) and other IDEs have plug-ins
+
+and many more: [http://git-scm.com/downloads/guis](http://git-scm.com/downloads/guis)
+
+
+GitHub for collaboration
 ========================================================
 type: section
 
-Concepts
-========================================================
 
-*Classic filesystems:*
-
-- directories:  
-  <img src = "figures/folder.svg" style = "height: 1.4em; margin-bottom: 0; "/>
-- files:  
-  <img src = "figures/file.svg" style = "height: 2em; margin-bottom: 0; "/>
-  
-***
-
-*git:*
-- repository:   
-  - commits:  
-  <img src = "figures/commit.svg" style = "height: 2em; margin-bottom: 0; "/>
-  - pointers:  
-  <img src = "figures/pointer.svg" style = "height: 1em; margin-bottom: 0;"/>
-  - working directory:  
-    <img src = "figures/file.svg" style = "height: 2em; margin-bottom: 0; "/>  & <img src = "figures/folder.svg" style = "height: 1.4em; margin-bottom: 0; "/>
-
-
-<!-- here: replace series about commits with a basic network graph. -->
-
-\begin{tchncl}
 =======================================================
-type: section
 
-What is a repository?
-========================================================
-incremental: true
-
-<img src="figures/folder.svg" style = "height: 6em;">  
-{demo}  
-
-- it's a directory
-- it contains meta-data  
-- it contains *'commits'*  
+![](figures/github.png)
 
 
-What are commits?
-========================================================
-incremental: true
-
-<img src="figures/commit.svg" style = "height: 5em;">  
-
-- instructions to change one file or multiple files
-- instructions to remove or add files
-
-What are commits?
-========================================================
-incremental: true
-
-<img src="figures/commit.svg" style = "height: 5em;">  
-
-- each commit has a unique name: a **hash-tag** 
-  `#5b26a8379e0f1ea6dd87916d738a49d118361676`
-- meta info: 
-  - commiter name and e-mail, time and date of commit
-  - a **commit message**
-  - a reference to it's **parent** (pointer)
-
-what are pointers? 
-========================================================
-incremental: true
-
-
-<img src="figures/pointer.svg" style = "height: 2.5em; margin: 1.5em 0;">  
-
-- **a reference to a commit** 
-- they connect commits *upstream*
-
-what are pointers? 
-========================================================
-incremental: true
-
-<img src="figures/pointer.svg" style = "height: 2.5em; margin: 1.5em 0;">  
-
-Types of pointers:  
-- 'tags' <img src="figures/tag1-0.svg" style = "height: 1em; margin: 0;">  <img src="figures/tag1-2.svg" style = "height: 1em; margin: 0;"> 
-- 'branches' <img src="figures/branch-master.svg" style = "height: 1em; margin: 0;"> <img src="figures/branch-test.svg" style = "height: 1em; margin: 0;"> 
-- **the 'HEAD' of your repository** <img src="figures/HEAD.svg" style = "height: 1em; margin: 0;">   
-
-
-
-What is a repository, really? 
-========================================================
-incremental: true
-
-- a repository consists of commits
-- each commit contains instructions for edits
-- each commit has a pointer to it's parent
-- additional pointers as references
-
-
-What is a repository, really? 
+GitHub
 ========================================================
 
-- a repository consists of commits
-- each commit contains instructions for edits
-- each commit has a pointer to it's parent
-- additional pointers as references
+ideal for collaboration 
 
-<img src="figures/commit_alone.svg" style = "height: 1em;"><img src="figures/commit.svg" style = "height: 1em;"><img src="figures/branch-master.svg" style = "height: 0.8em;">  <img src="figures/HEAD.svg" style = "height: 0.8em;"> <img src="figures/folder.svg" style = "height: 1em;">
+- distributed git repositories, a.k.a. *clones* or *forks* 
+- each repo is a *branch* of the parent repository
+- *merge* branches easily
 
-What is a repository, really? 
+side effects:
+
+- backing-up
+- syncing your computers
+
+
+GitHub
 ========================================================
 
-- a repository consists of commits
-- each commit contains instructions for edits
-- each commit has a pointer to it's parent
-- additional pointers as references
+[https://github.com/](https://github.com/)
 
-<img src="figures/commit_alone.svg" style = "height: 1em;"><img src="figures/commit.svg" style = "height: 1em;"><img src="figures/commit.svg" style = "height: 1em;"><img src="figures/branch-master.svg" style = "height: 0.8em;">  <img src="figures/HEAD.svg" style = "height: 0.8em;">  <img src="figures/folder.svg" style = "height: 1em;">
+- hosting of *remote* repositories
+- free for open source projects (fully public!)
+- private repositories (free for researchers and students)
+- collaborate (assign tasks, teams, access control)
+- manage projects (milestones, wikis)
+- share and publish (public stable URL, code releases)
 
-What is a repository, really? 
+
 ========================================================
 
-- a repository consists of commits
-- each commit contains instructions for edits
-- each commit has a pointer to it's parent
-- additional pointers as references
+![](figures/remotes_Page_1.png)
 
-<img src="figures/commit_alone.svg" style = "height: 1em;"><img src="figures/commit.svg" style = "height: 1em;"><img src="figures/commit.svg" style = "height: 1em;"><img src="figures/commit.svg" style = "height: 1em;"><img src="figures/branch-master.svg" style = "height: 0.8em;">  <img src="figures/HEAD.svg" style = "height: 0.8em;"> <img src="figures/folder.svg" style = "height: 1em;">
 
-What is a repository, really? 
+========================================================
+![](figures/remotes_Page_2.png)
+
+
+========================================================
+![](figures/remotes_Page_3.png)
+
+
+========================================================
+![](figures/remotes_Page_4.png)
+
+
+========================================================
+![](figures/remotes_Page_5.png)
+
+
+
+
+Alternatives 
 ========================================================
 
-<img src="figures/tree-full.svg" style = "height:450px;">
+GitLab at Bik-F: [http://172.30.45.28/](http://172.30.45.28/) (provided by Data and Modelling Centre, access only from local network/VPN)
 
-the working directory
-========================================================
+![](figures/gitlab.png)
 
-<img src="figures/tree-master.svg" style = "height:450px;">
+[Bitbucket](https://bitbucket.org/) (free private for small teams)  
 
-**the working directory is  
-showing the accumulated commits at 'HEAD'**
+[GitLab Cloud](https://about.gitlab.com/gitlab-com/) (unlimited free private)
 
-
-
-the working directory
-========================================================
-
-<img src="figures/tree-feature.svg" style = "height:450px;">
-
-And this is how 'time travelling' works:  
-you can move HEAD to **branches**
-
-
-the working directory
-========================================================
-
-<img src="figures/tree-f1.svg" style = "height:450px;">
-
-And this is how 'time travelling' works:  
-you can move HEAD to **tags**
-
-
-the working directory
-========================================================
-
-<img src="figures/tree-master.svg" style = "height:450px;">
-
-And this is how 'time travelling' works:  
-you can move HEAD back to **'master' branch**
-  
-the working directory
-========================================================
-
-<img src="figures/tree-hash.svg" style = "height:450px;">
-
-And this is how 'time travelling' works:  
-you can move HEAD to *any* commit (per hash-tag)
-
-  
-\end{tchncl}
-=======================================================
-type: section
 
 
 Questions?
@@ -400,371 +311,144 @@ Questions?
 type: section
 
 
+
+
+
+
 A word on filetypes
 =======================================================
 
 ### binary files 
-- .docx, .ppt, .pdf, .jpg, .xls
+ .docx, .ppt, .pdf, .jpg
 - 'closed' filetypes
-- edits can't be tracked
-- **not well suited for VC**
+- git has to save edit as full file 
+- **not ideal for git**
 
 ***
 
-### pure text files
-- .r, .cpp, .txt, .tex, .md, .csv
+### raw text files
+ .r, .cpp, .txt, .tex, .md, .csv
 - 'open' filetypes
-- **perfect for VC**
+- only changed lines are recorded by git
+- **perfect for git**
 
 
-How does it work?
-========================================================
-
-What you need to learn:
-- git startet **(Exercise 1)**
-  - how to create a repository
-  - how to build a commit 
-- time travelling  **(Exercise 2)**
-  - how to set tags
-  - how to move your HEAD
-- how to back-up or sync  **(Exercise 3)**
-  - configure *remotes*
-  - push and pull
-
-
-1 | git started
-========================================================
-type: sub-section
-
-1. create a git repository
-2. generate content
-3. do commits
-
-Create a repository
-========================================================
-
-open a terminal
-
-```
-$
-```
-
-Create a repository
-========================================================
-
-Create a new folder. 
-
-```
-$ mkdir test
-$ cd test
-$
-```
-
-Create a repository
-========================================================
-
-Initialise a git repository.
-
-```
-$ mkdir test
-$ cd test
-$ git init
-Initialized empty Git repository ...
-$
-```
-
-Generate initial content
-========================================================
-
-- create a *text* file (*e.g.*, test.txt)
-- create/copy a code file
-- ... 
-
-Generate initial content
-========================================================
-
-check the status!
-
-```
-$ git status
-On branch master
-
-Initial commit
-
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
-
-        test.txt
-
-nothing added to commit but untracked files present (use "git add" to track)
-```
-
-Commit
-========================================================
-
-This is a two step process:
-
-1. staging files for next commit  
-
-  ```
-  $ git add test.txt
-  ```
-  - chose files or edits for the next commit
-  - wrap 'meaningful' commits
-
-2. commit to repository 
-    
-```
-$ git commit -m "edit test.txt: fix #23"
-```
-  - commit message is obligatory: `-m "..."` 
-
-Commit
-========================================================
-
-check status again!
-
-```
-$ git status
-On branch master
-nothing to commit, working directory clean
-```
-
-Commit
-========================================================
-
-have a look at your repository tree!
-
-```
-$ git log
-commit a9b0697265feb5013eced9c1befb9a10a94a66cb
-Author: Florian Schneider <florian.schneider@univ-montp2.fr>
-Date:   Fri Nov 21 16:30:53 2014 +0100
-
-    edit test.txt
-    
-```
-
-1 | git started
-========================================================
-type: sub-section
-
-1. create a git repository
-2. edit content
-3. do commits
-
-(repeat 2 & 3 a couple of times! use `git status` and `git log`!)
-
-
-2 | tagging
-========================================================
-type: sub-section
-
-in same repository:
-
-1. add a 'tag'
-2. edit content 
-3. add and commit
-5. check history: `git log` 
-6. checkout tag
-7. return to latest version
-
-
-Add a tag
-========================================================
-
-Terminal:
-
-```
-$ git tag -a v1.0 -m "first version of project"
-$
-```
-
-
-Commit
-========================================================
-
-continue work: 
- - edit
- - add and commit 
-
-
-Time traveling
-========================================================
-
-```
-$ git tag
-v1.0
-$
-```
-
-
-Time traveling
-========================================================
-
-```
-$ git tag
-v1.0
-$ git checkout v1.0
-$
-```
-
-look at your files!
-
-
-
-Time traveling
-========================================================
-
-```
-$ git tag
-v1.0
-$ git checkout v1.0
-$ git checkout master
-$
-```
-
-look at your files!
-
-1 & 2 | completed
-========================================================
-type: sub-section
-
-what you learned:
-
-- create a new repository
-- add and commit
-- check `log` and `status`
-- add 'tags' as references
-- check-out different commits
-
-
-Congrats!
+git started
 ========================================================
 type: section
 
-graphical Clients
+
+
+hands-on
 ========================================================
 
-- Windows: [GitHub for Windows](http://windows.github.com/)
-- Mac: [GitHub for Mac](http://mac.github.com/)
-- Linux: [git-cola](http://git-cola.github.com/)
-- all: [smartGitHg](http://www.syntevo.com/smartgit/), [GitEye](http://www.giteyeapp.com/), [RStudio](http://www.rstudio.com) and other IDEs have plug-ins
-
-and many more: [http://git-scm.com/downloads/guis](http://git-scm.com/downloads/guis)
-
-
-Remotes
-========================================================
-type: section
-
-Why working with remotes?
-========================================================
-- back-up
-- syncing your computers
-- collaboration
-
-
-Remotes
+- get yourself a clone **(Exercise 1)**
+  - fork a repository on Github
+  - get a local copy of a repository on Github
+- get the (work)flow **(Exercise 2)**
+  - create commits
+  - pull and push your commits
+- collaborate via GitHub **(Exercise 3)**
+  - invite collaborators
+  - pull and push edits
+  - manage your work: issues and milestones
+  
+  hands-on
 ========================================================
 
-![](figures/remotes_Page_1.png)
-
-Remotes
-========================================================
-![](figures/remotes_Page_2.png)
-
-Remotes
-========================================================
-![](figures/remotes_Page_3.png)
-
-Remotes
-========================================================
-![](figures/remotes_Page_4.png)
-
-Remotes
-========================================================
-![](figures/remotes_Page_5.png)
+- share and publish your code **(Exercise 4)**
+  - add a license
+  - create a release
+  - add documentation
 
 
-Clones
-========================================================
-
-
-- you can **clone** existing repositories from remotes
-
-```
-git clone https://github.com/cascade-wp6/git_intro.git
-```
-
-- your local repository will refer to the *original* repository as **origin**
-- you can **pull** from and **push** to origin:
-
-```
-git pull origin master
-git push origin master
-```
-
-more info: [http://git-scm.com/book](http://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes)
-
-
-GitLab at UM2
-========================================================
-
-[https://gitlab.info-ufr.univ-montp2.fr/](https://gitlab.info-ufr.univ-montp2.fr/)
-
-![](figures/gitlab.png)
-
-GitLab at UM2
-========================================================
-
-[https://gitlab.info-ufr.univ-montp2.fr/](https://gitlab.info-ufr.univ-montp2.fr/)
-
-- no third party, non-commercial
-- hosting of remote repositories
-- free private or public projects 
-- collaborate (teams, tasks)
-
-GitHub
-========================================================
-
-[https://github.com/](https://github.com/)
-
-![](figures/github.png)
-
-GitHub
-========================================================
-
-[https://github.com/](https://github.com/)
-
-- hosting of remote repositories
-- free for open source projects (fully public!)
-- private repositories (commercial)
-- collaborate (issues, teams, access control)
-- manage projects (milestones, wikis)
-
-Alternatives 
-========================================================
-
-[Bitbucket](https://bitbucket.org/) (free private for small teams)  
-
-[GitLab Cloud](https://about.gitlab.com/gitlab-com/) (unlimited free private)
-
-self-hosted git server, and many more
-
-
-3 | Remotes
+1 | get yourself a clone
 ========================================================
 type: sub-section
 
-1. create a git repository on Gitlab or Github.
-2. clone to local Computer: <br> `git clone https://github.com/user/repo`
-3. generate content
-4. add and commit
-5. push (requires password)
-6. edit online
-7. pull
+1. create a new repository on Github or fork an existing one.
+2. clone it to local Computer using RStudio "New Project"
+3. browse content and compare to what you see on Github
 
+2 | get the (work)flow 
+========================================================
+type: sub-section
+
+1. edit files or create new ones
+2. create a commit that includes your changes
+  
+repeat a few times
+
+2 | get the (work)flow 
+========================================================
+type: sub-section
+
+3. check history (a.k.a. *git log*)
+3. push to Github
+4. browse files online
+5. edit file online (e.g. your README)
+6. pull
+7. browse files offline
+
+
+3 | collaborate via GitHub
+========================================================
+type: sub-section
+
+1. create a new repository on GitHub or fork an existing one
+2. invite a collaborator/accept invitation
+3. add or edit some files locally
+4. pull from Github (to make sure you're up to date)
+5. push to Github
+
+both collaborators repeat 3.-5. a few times. 
+
+
+3 | collaborate via GitHub
+========================================================
+type: sub-section
+
+Did you encounter conflicts? How did Github solve these? How did you avoid having conflicts? 
+
+
+3 | collaborate via GitHub
+========================================================
+type: sub-section
+
+Manage your collaboration
+
+1. create a new *issue* 
+2. define milestones
+
+
+4 | publish your code
+========================================================
+type: sub-section
+
+
+4 | publish your code
+========================================================
+type: sub-section
+
+Open source: 
+
+- turn private repos public!
+- [choose a license](http://choosealicense.com/): GPL or MIT for code, Creative Commons 4.0 for text and data
+- create releases and assign a DOI (e.g. via [zenodo.org](https://zenodo.org/))
+
+Why? 
+- scientific work is public property
+- speeding up science: enable re-use & inspiration
+- adds credibility and originality
+- reproducible science 
+
+
+4 | publish your code
+========================================================
+type: sub-section
+
+1. add a License to your repository
+2. create a release on GitHub
 
 
 What we learned today:
@@ -773,46 +457,49 @@ incremental: true
 
 1. version control is useful, really!
 2. **git** is a simple version control system  
-3. how to get started using git for our personal work
+3. use **Github** for collaboration on code 
 
 <br>
 
 ### we might learn later
 
-- how to fix version conflicts
-- how to develop workflows
-- how git can be used to collaborate
+- how to fix merge conflicts
+- time travelling using `git checkout` 
+- advanced workflow using *branches* 
+- advanced collaboration (via pull requests)
+
+
+
+Questions?
+========================================================
+type: section
+
+
+a last word
+========================================================
+incremental: true
+
+start using git and Github now!
+
+- for your current analysis
+- for your own code package
+- for your database
+- for your next manuscript in latex
+- for sharing, back-up, syncing
+- for project management
+
+
 
 
 Resources
 ========================================================
-type: section
 
-Resources
-========================================================
+Extensive resources by Atlassian Bitbucket https://www.atlassian.com/git/
 
-https://www.atlassian.com/git/
-
-http://git-scm.com/book/
-
-http://git-scm.com/
-
-https://training.github.com/kit/
+Official git documentation (
+http://git-scm.com/) and book (http://git-scm.com/book/)
 
 
-Final Thoughts:
-========================================================
-type: section
+Github has some resources on [command line basics](https://try.github.io/), including a 
+[git cheat sheet](https://services.github.com/kit/downloads/github-git-cheat-sheet.pdf). 
 
-Open source
-========================================================
-type: sub-section
-
-- turn private repos public!
-- [choose a license](http://choosealicense.com/): GPL or MIT for code, Creative Commons for text and data
-
-Why? 
-- scientific work is public property
-- speeding up science: enable re-use & inspiration
-- adds credibility and originality
-- reproducibility 
