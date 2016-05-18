@@ -35,7 +35,7 @@ why version control?
 ========================================================
 incremental: true
 
-- don't go back and forth!
+- un-doing mistakes
 - manage your non-linear development! 
 - write re-usable code!
 
@@ -45,7 +45,7 @@ why version control?
 ========================================================
 incremental: true
 
-- collaborate on code and text! 
+- collaborate on code (and text)
 - enable structured code review 
 - publish your code 
 
@@ -245,21 +245,6 @@ type: section
 GitHub
 ========================================================
 
-ideal for collaboration 
-
-- distributed git repositories, a.k.a. *clones* or *forks* 
-- each repo is a *branch* of the parent repository
-- *merge* branches easily
-
-side effects:
-
-- backing-up
-- syncing your computers
-
-
-GitHub
-========================================================
-
 [https://github.com/](https://github.com/)
 
 - hosting of *remote* repositories
@@ -268,6 +253,21 @@ GitHub
 - collaborate (assign tasks, teams, access control)
 - manage projects (milestones, wikis)
 - share and publish (public stable URL, code releases)
+
+
+GitHub
+========================================================
+
+ideal for collaboration 
+
+- distributed git repositories, a.k.a. *clones* or *forks* 
+- each repo is a *branch* of the parent repository
+- *merge* branches easily
+
+side effects:
+
+- back-up your projects
+- syncing your computers
 
 
 ========================================================
