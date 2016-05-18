@@ -21,47 +21,36 @@ Introduction
 type: section
 
 
-why version control?
+What is version control?
 ========================================================
-incremental: true
+type: sub-section
 
-- know what you did and when you did it! 
-- documentation & development history 
-- do robust, structured backups!
 
-## reproducibility
-
-why version control?
+Saving snapshots!
 ========================================================
-incremental: true
+type: sub-section
 
-- don't go back and forth!
-- manage your non-linear development! 
-- write re-usable code!
+- know what you did and when you did it
+- documentation of project history 
+- un-doing mistakes
 
-## progressive development
 
-why version control?
+Making progress!
 ========================================================
-incremental: true
+type: sub-section
 
-- collaborate on code and text! 
+- do robust, structured backups
+- manage your non-linear development
+- merge different versions
+- write re-usable code
+
+Share!
+========================================================
+type: sub-section
+
+- collaborate on code (and text)
 - enable structured code review 
 - publish your code 
-
-## openness
-
-
-========================================================
-incremental: true
-
-## reproducibility
-## progressive development
-## openness
-## = 
-## Quality management!
-
-
 
 
 But: hey! 
@@ -131,33 +120,16 @@ project_v0.2_sonia.c| 04.08.2014
 project_v0.21_s.c   | 05.08.2014
 project_v0.2.c      | 07.08.2014
 
+
 But:
 ========================================================
+incremental: true
 
-it's annoying!
-========================================================
-- There are so many files! 
-
-it's confusing!
-========================================================
-- Which one was the latest version?
-- OMG, I cannot show that to anyone!
-
-it's not progressive or reproducible
-========================================================
-- Did I fix that bug in the right file now?  
-- What version of that function is this?  
-- Which version of the code was used to produce this result? 
-
-it's not helping at all
-========================================================
-incremental:true
-
-- I still need to do manual back-ups!  
-- I still cannot reproduce what I did!
-- Others cannot reproduce what I did!
-- Collaboration is not straightforward!
-
+- "There are so many files! Which one was the latest version?"
+- "Did I fix that bug in the right file now?"
+- "Which version of the code was used to produce this result?"
+- "OMG, I cannot share that mess with others!"
+- "I still need to do manual back-ups!"  
 
 
 
@@ -165,18 +137,6 @@ git:  a version control "system"
 ========================================================
 type: section
 
-git
-========================================================
-incremental: true
-
-- it's a version control "system" 
-- robust against errors
-- works for code
-- works for databases
-- works for writing, too!
-- clean working directory
-
-<!-- demo of folder -->
 
 git
 ========================================================
@@ -201,6 +161,20 @@ filename            | last updated
 ------------------- | ----------
 .git                | 03.08.2014
 project.c           | 03.08.2014
+
+
+git
+========================================================
+incremental: true
+
+- it's a version control "system" 
+- does the bookkeeping
+- robust against errors
+- works for code
+- works for databases
+- works for writing, too!
+
+<!-- demo of folder -->
 
 
 git
@@ -245,21 +219,6 @@ type: section
 GitHub
 ========================================================
 
-ideal for collaboration 
-
-- distributed git repositories, a.k.a. *clones* or *forks* 
-- each repo is a *branch* of the parent repository
-- *merge* branches easily
-
-side effects:
-
-- backing-up
-- syncing your computers
-
-
-GitHub
-========================================================
-
 [https://github.com/](https://github.com/)
 
 - hosting of *remote* repositories
@@ -268,6 +227,21 @@ GitHub
 - collaborate (assign tasks, teams, access control)
 - manage projects (milestones, wikis)
 - share and publish (public stable URL, code releases)
+
+
+GitHub
+========================================================
+
+ideal for collaboration 
+
+- distributed git repositories, a.k.a. *clones* or *forks* 
+- each repo is a *branch* of the parent repository
+- *merge* branches easily
+
+side effects:
+
+- back-up your projects
+- syncing your computers
 
 
 ========================================================
