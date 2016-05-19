@@ -2,8 +2,8 @@ git version control
 ========================================================
 author: Florian D. Schneider 
 date: 19.05.2016
-font-import: http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic&subset=latin,greek-ext,greek
-font-family: 'Open Sans'
+font-import: https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic&subset=latin,greek-ext,greek
+font-family: 'Open Sans', Arial
 transition: none
 
 
@@ -289,24 +289,6 @@ type: section
 
 
 
-A word on filetypes
-=======================================================
-
-### binary files 
- .docx, .ppt, .pdf, .jpg
-- 'closed' filetypes
-- git has to save edit as full file 
-- **not ideal for git**
-
-***
-
-### raw text files
- .r, .cpp, .txt, .tex, .md, .csv
-- 'open' filetypes
-- only changed lines are recorded by git
-- **perfect for git**
-
-
 git started
 ========================================================
 type: section
@@ -442,6 +424,24 @@ incremental: true
 - advanced workflow using *branches* 
 - advanced collaboration (via pull requests)
 
+
+
+A word on filetypes
+=======================================================
+
+### binary files 
+ .docx, .ppt, .pdf, .jpg
+- 'closed' filetypes
+- git has to save edit as full file 
+- **not ideal for git**
+
+***
+
+### raw text files
+ .r, .cpp, .txt, .tex, .md, .csv
+- 'open' filetypes
+- only changed lines are recorded by git
+- **perfect for git**
 
 
 Questions?
